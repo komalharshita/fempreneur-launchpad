@@ -23,14 +23,13 @@ const footerColumns = [
 ];
 
 const Footer = () => (
-  <footer className="bg-foreground">
+  <footer className="bg-foreground" role="contentinfo">
     <div className="mx-auto max-w-[1200px] px-5 py-12 md:px-8 md:py-16">
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-        {/* Brand column */}
         <div className="sm:col-span-2 lg:col-span-1">
-          <span className="font-display text-lg font-bold text-primary-foreground">
+          <a href="#hero" className="font-display text-lg font-bold text-primary-foreground">
             The Fempreneur Lab
-          </span>
+          </a>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
             Empowering women to build businesses with confidence.
           </p>
