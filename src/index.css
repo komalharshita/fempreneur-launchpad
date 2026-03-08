@@ -73,6 +73,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
@@ -119,4 +123,10 @@
   .font-subheading {
     font-family: var(--font-subheading);
   }
+}
+
+/* Button active feedback */
+button:active:not(:disabled),
+[role="button"]:active:not(:disabled) {
+  transform: scale(0.97);
 }
