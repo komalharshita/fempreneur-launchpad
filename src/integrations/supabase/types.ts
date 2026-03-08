@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      showcase_submissions: {
+        Row: {
+          business_name: string
+          created_at: string
+          description: string
+          founder_name: string
+          id: string
+          image_url: string | null
+          status: string
+          website_url: string | null
+        }
+        Insert: {
+          business_name: string
+          created_at?: string
+          description: string
+          founder_name: string
+          id?: string
+          image_url?: string | null
+          status?: string
+          website_url?: string | null
+        }
+        Update: {
+          business_name?: string
+          created_at?: string
+          description?: string
+          founder_name?: string
+          id?: string
+          image_url?: string | null
+          status?: string
+          website_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
