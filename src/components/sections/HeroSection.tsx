@@ -8,13 +8,15 @@ const HeroSection = () => (
     className="relative overflow-hidden"
     style={{
       background:
-        "linear-gradient(135deg, hsl(264 100% 97%) 0%, hsl(340 100% 97%) 50%, hsl(264 100% 97%) 100%)",
+        "linear-gradient(160deg, hsl(264 100% 97%) 0%, hsl(340 100% 97%) 40%, hsl(264 100% 97%) 70%, hsl(340 100% 98%) 100%)",
     }}
   >
+    {/* Ambient glow shapes */}
     <div className="pointer-events-none absolute inset-0">
-      <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[100px]" />
-      <div className="absolute -left-20 bottom-0 h-[400px] w-[400px] rounded-full bg-primary/8 blur-[80px]" />
-      <div className="absolute right-1/4 top-1/3 h-48 w-48 rounded-full bg-accent/5 blur-[60px]" />
+      <div className="absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-accent/8 blur-[120px]" />
+      <div className="absolute -left-24 bottom-0 h-[450px] w-[450px] rounded-full bg-primary/6 blur-[100px]" />
+      <div className="absolute right-1/3 top-1/4 h-56 w-56 rounded-full bg-accent/4 blur-[80px]" />
+      <div className="absolute left-1/4 top-2/3 h-32 w-32 rounded-full bg-primary/5 blur-[60px]" />
     </div>
 
     <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 px-5 pb-[100px] pt-[120px] md:px-8 lg:grid-cols-2 lg:gap-16 max-md:pb-16 max-md:pt-20">
@@ -57,7 +59,7 @@ const HeroSection = () => (
 
       <FadeIn delay={200}>
         <div className="relative flex items-center justify-center lg:justify-end">
-          <div className="absolute h-[340px] w-[340px] rounded-full border-2 border-dashed border-accent/20 md:h-[420px] md:w-[420px]" />
+          <div className="absolute h-[340px] w-[340px] rounded-full border-2 border-dashed border-accent/15 md:h-[420px] md:w-[420px]" />
           <svg
             viewBox="0 0 400 400"
             fill="none"

@@ -47,11 +47,11 @@ const tools = [
 ];
 
 const BusinessToolsSection = () => (
-  <SectionWrapper id="tools" className="bg-secondary">
+  <SectionWrapper id="tools" className="section-rose">
     <FadeIn>
       <div className="text-center">
         <h2>Powerful tools to build your business</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Use AI-powered tools to generate ideas, plan your business, and create content that helps you launch with confidence.
         </p>
       </div>

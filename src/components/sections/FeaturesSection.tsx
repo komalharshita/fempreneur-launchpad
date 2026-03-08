@@ -16,7 +16,7 @@ const FeaturesSection = () => (
     <FadeIn>
       <div className="text-center">
         <h2>Everything you need to start your business</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           The Fempreneur Lab combines AI guidance, business tools, structured learning, and community inspiration to help women confidently turn their ideas into real businesses.
         </p>
       </div>
@@ -25,13 +25,13 @@ const FeaturesSection = () => (
     <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {features.map((feature, i) => (
         <FadeIn key={feature.title} delay={i * 80}>
-          <div className="group flex h-full flex-col rounded-2xl bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-200 group-hover:bg-primary/20">
-              <feature.icon className="h-6 w-6 text-primary" />
+          <div className="card-premium group flex h-full flex-col p-6">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
+              <feature.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
             </div>
             <h3 className="text-xl">{feature.title}</h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
-            <a href="#" className="mt-4 inline-block font-subheading text-sm font-medium text-primary opacity-0 transition-all duration-200 group-hover:opacity-100" aria-label={`Learn more about ${feature.title}`}>
+            <p className="mt-2 flex-1 text-sm text-muted-foreground">{feature.description}</p>
+            <a href="#" className="mt-4 inline-block font-subheading text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100" aria-label={`Learn more about ${feature.title}`}>
               Learn More →
             </a>
           </div>
