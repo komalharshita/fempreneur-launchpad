@@ -1,50 +1,8 @@
+import { Link } from "react-router-dom";
 import SectionWrapper from "../layout/SectionWrapper";
-import ToolCard from "../tools/ToolCard";
 import FadeIn from "@/components/ui/FadeIn";
-import { Palette, Calculator, FileText, Instagram } from "lucide-react";
-
-const tools = [
-  {
-    icon: Palette, title: "Business Name & Branding Generator",
-    helperText: "Struggling to name your business? Let AI help you generate creative brand ideas.",
-    toolId: "brand-generator", buttonLabel: "Generate Brand Ideas",
-    fields: [
-      { key: "businessType", label: "Business type", placeholder: "e.g. Crochet business" },
-      { key: "targetAudience", label: "Target audience", placeholder: "e.g. College students" },
-      { key: "brandStyle", label: "Brand style (optional)", placeholder: "e.g. Cute and cozy" },
-    ],
-  },
-  {
-    icon: Calculator, title: "Pricing Calculator",
-    helperText: "Not sure what to charge? Get an AI-powered pricing recommendation for your product.",
-    toolId: "pricing-calculator", buttonLabel: "Calculate Price",
-    fields: [
-      { key: "materialCost", label: "Material cost ($)", placeholder: "e.g. 15" },
-      { key: "timeSpent", label: "Time spent (hours)", placeholder: "e.g. 3" },
-      { key: "packagingCost", label: "Packaging cost ($)", placeholder: "e.g. 5" },
-    ],
-  },
-  {
-    icon: FileText, title: "AI Business Plan Generator",
-    helperText: "Turn your idea into a simple, actionable business plan in seconds.",
-    toolId: "business-plan", buttonLabel: "Generate Business Plan",
-    fields: [
-      { key: "businessIdea", label: "Business idea", placeholder: "e.g. Handmade candles" },
-      { key: "targetAudience", label: "Target audience", placeholder: "e.g. Wellness enthusiasts" },
-      { key: "budget", label: "Budget estimate ($)", placeholder: "e.g. 500" },
-    ],
-  },
-  {
-    icon: Instagram, title: "Social Media Caption Generator",
-    helperText: "Create scroll-stopping captions for your products in one click.",
-    toolId: "caption-generator", buttonLabel: "Generate Caption",
-    fields: [
-      { key: "productName", label: "Product name", placeholder: "e.g. Rose Gold Earrings" },
-      { key: "productDescription", label: "Product description", placeholder: "e.g. Handmade minimalist jewelry" },
-      { key: "tone", label: "Tone", placeholder: "e.g. Cute, professional, fun" },
-    ],
-  },
-];
+import { Button } from "@/components/ui/button";
+import { allTools } from "@/data/tools";
 
 const BusinessToolsSection = () => (
   <SectionWrapper id="tools" className="section-rose">
@@ -58,9 +16,20 @@ const BusinessToolsSection = () => (
     </FadeIn>
 
     <div className="mt-14 grid gap-8 md:grid-cols-2">
-      {tools.map((tool, i) => (
-        <FadeIn key={tool.toolId} delay={i * 100}>
-          <ToolCard {...tool} />
+      {allTools.map((tool, i) => (
+        <FadeIn key={tool.slug} delay={i * 100}>
+          <div className="card-premium group flex h-full flex-col p-6">
+            <div className="mb-3 flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                <tool.icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-lg">{tool.title}</h3>
+            </div>
+            <p className="mb-5 flex-1 text-sm text-muted-foreground">{tool.helperText}</p>
+            <Button variant="gradient" className="w-full" asChild>
+              <Link to={`/tools/${tool.slug}`}>Open Tool</Link>
+            </Button>
+          </div>
         </FadeIn>
       ))}
     </div>

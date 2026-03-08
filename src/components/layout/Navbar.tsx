@@ -1,25 +1,56 @@
 import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "AI Mentor", href: "#features" },
-  { label: "Business Tools", href: "#tools" },
-  { label: "Learning Paths", href: "#learn" },
-  { label: "Resource Library", href: "#learn" },
-  { label: "Showcase", href: "#showcase" },
-];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  const navLinks = isHome
+    ? [
+        { label: "Home", href: "#hero" },
+        { label: "Features", href: "#features" },
+        { label: "Tools", href: "/tools", isRoute: true },
+        { label: "Learning", href: "#learn" },
+        { label: "Resources", href: "#resources" },
+        { label: "Showcase", href: "#showcase" },
+      ]
+    : [
+        { label: "Home", href: "/", isRoute: true },
+        { label: "Tools", href: "/tools", isRoute: true },
+      ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const renderLink = (link: { label: string; href: string; isRoute?: boolean }) =>
+    link.isRoute ? (
+      <Link
+        key={link.label}
+        to={link.href}
+        onClick={() => setMobileOpen(false)}
+        className="group relative font-subheading text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary focus-visible:text-primary focus-visible:outline-none"
+      >
+        {link.label}
+        <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-primary transition-all duration-300 group-hover:w-full" />
+      </Link>
+    ) : (
+      <a
+        key={link.label}
+        href={link.href}
+        onClick={() => setMobileOpen(false)}
+        className="group relative font-subheading text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary focus-visible:text-primary focus-visible:outline-none"
+      >
+        {link.label}
+        <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-primary transition-all duration-300 group-hover:w-full" />
+      </a>
+    );
 
   return (
     <header
@@ -30,21 +61,12 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-3.5 md:px-8">
-        <a href="/" className="font-display text-xl font-bold text-foreground">
+        <Link to="/" className="font-display text-xl font-bold text-foreground">
           The Fempreneur Lab
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="group relative font-subheading text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary focus-visible:text-primary focus-visible:outline-none"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-primary transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {navLinks.map(renderLink)}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -69,16 +91,27 @@ const Navbar = () => {
       >
         <nav className="border-t border-border bg-card px-5 pb-6 pt-4" aria-label="Mobile navigation">
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="font-subheading text-base font-medium text-muted-foreground transition-colors duration-200 hover:text-primary"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="font-subheading text-base font-medium text-muted-foreground transition-colors duration-200 hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="font-subheading text-base font-medium text-muted-foreground transition-colors duration-200 hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <div className="mt-4 flex flex-col gap-3">
               <Button variant="outline" className="w-full">Login</Button>
               <Button variant="gradient" className="w-full">Sign Up</Button>
