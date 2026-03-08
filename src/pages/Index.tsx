@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import BusinessToolsSection from "@/components/sections/BusinessToolsSection";
@@ -19,6 +20,7 @@ const Index = () => (
       <CTASection />
     </main>
     <Footer />
+    <ScrollToTop />
   </div>
 );
 
