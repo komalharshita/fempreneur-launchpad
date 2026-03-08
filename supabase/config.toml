@@ -1,0 +1,4 @@
+project_id = "bhiggiybluqxbjeoqnnh"
+
+[functions.business-tools]
+verify_jwt = false
