@@ -1,30 +1,67 @@
 import SectionWrapper from "../layout/SectionWrapper";
-import { Lightbulb, Wrench, Users, BookOpen } from "lucide-react";
+import { MessageCircle, Sparkles, GraduationCap, BookOpen, Store, Users } from "lucide-react";
 
 const features = [
-  { icon: Lightbulb, title: "AI-Powered Tools", description: "Smart tools to help you plan, create, and grow your business with confidence." },
-  { icon: BookOpen, title: "Structured Learning", description: "Step-by-step courses designed for beginners and aspiring entrepreneurs." },
-  { icon: Wrench, title: "Curated Resources", description: "Hand-picked templates, guides, and toolkits to save you time." },
-  { icon: Users, title: "Community", description: "Connect with women who inspire, support, and uplift each other." },
+  {
+    icon: MessageCircle,
+    title: "AI Mentor",
+    description: "Chat with an AI mentor that guides you step-by-step through starting and growing your business.",
+  },
+  {
+    icon: Sparkles,
+    title: "Business Tools",
+    description: "Generate business names, pricing strategies, and business plans using powerful AI tools.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Learning Paths",
+    description: "Follow structured learning paths designed to help beginners build real businesses.",
+  },
+  {
+    icon: BookOpen,
+    title: "Resource Library",
+    description: "Access curated tutorials, guides, and tools that help you understand every stage of entrepreneurship.",
+  },
+  {
+    icon: Store,
+    title: "Platform Setup Guides",
+    description: "Learn how to launch your store on platforms like Etsy, Amazon, Instagram, or even offline.",
+  },
+  {
+    icon: Users,
+    title: "Women Entrepreneurs Showcase",
+    description: "Discover inspiring businesses created by women in the community and share your own journey.",
+  },
 ];
 
 const FeaturesSection = () => (
   <SectionWrapper id="features">
-    <div className="mb-12 text-center">
-      <h2>Platform Features</h2>
-      <p className="mt-4 font-subheading text-muted-foreground">Everything you need to go from idea to launch.</p>
+    <div className="text-center">
+      <h2>Everything you need to start your business</h2>
+      <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        The Fempreneur Lab combines AI guidance, business tools, structured learning, and community inspiration to help women confidently turn their ideas into real businesses.
+      </p>
     </div>
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      {features.map(({ icon: Icon, title, description }) => (
+
+    <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => (
         <div
-          key={title}
-          className="group rounded-2xl border border-border bg-card p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+          key={feature.title}
+          className="group flex flex-col rounded-2xl bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
         >
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
-            <Icon size={26} strokeWidth={1.5} />
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+            <feature.icon className="h-6 w-6 text-primary" />
           </div>
-          <h3 className="text-lg">{title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+          <h3 className="text-xl">{feature.title}</h3>
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+            {feature.description}
+          </p>
+          <a
+            href="#"
+            className="mt-4 inline-block font-subheading text-sm font-medium text-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          >
+            Learn More →
+          </a>
         </div>
       ))}
     </div>
