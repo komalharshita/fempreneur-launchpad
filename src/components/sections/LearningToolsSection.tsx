@@ -1,28 +1,14 @@
 import SectionWrapper from "../layout/SectionWrapper";
 import FadeIn from "@/components/ui/FadeIn";
-import { Scissors, FileImage, Instagram, Home, BookOpen, Video, Wrench, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Scissors, FileImage, Instagram, Home } from "lucide-react";
 
 const learningPaths = [
-  { icon: Scissors, title: "Handmade Product Business", description: "Learn how to create, price, package, and sell handmade products." },
-  { icon: FileImage, title: "Digital Product Business", description: "Understand how to create and sell digital products such as templates, guides, or artwork." },
-  { icon: Instagram, title: "Instagram Store Setup", description: "Step-by-step guidance to start selling your products using Instagram." },
-  { icon: Home, title: "Local Small Business", description: "Learn how to start a home-based or local service business." },
+  { icon: Scissors, title: "Handmade Product Business", description: "Learn how to create, price, package, and sell handmade products.", lessons: 8 },
+  { icon: FileImage, title: "Digital Product Business", description: "Understand how to create and sell digital products such as templates, guides, or artwork.", lessons: 6 },
+  { icon: Instagram, title: "Instagram Store Setup", description: "Step-by-step guidance to start selling your products using Instagram.", lessons: 5 },
+  { icon: Home, title: "Local Small Business", description: "Learn how to start a home-based or local service business.", lessons: 7 },
 ];
-
-const resources = [
-  { icon: BookOpen, title: "How to Price Handmade Products", type: "Guide", description: "Learn simple strategies to price your products without undervaluing your work." },
-  { icon: Video, title: "Using Canva to Design Product Posters", type: "Video Tutorial", description: "Step-by-step tutorial showing how to create beautiful product visuals.", videoId: "dQw4w9WgXcQ" },
-  { icon: BookOpen, title: "How to Set Up an Etsy Store", type: "Guide", description: "A beginner-friendly guide to launching your Etsy shop." },
-  { icon: Wrench, title: "Where to Find Free Design Mockups", type: "Article", description: "Discover websites where you can download free product mockups." },
-  { icon: FileText, title: "Beginner Marketing for Small Businesses", type: "Article", description: "Simple marketing strategies to help you get your first customers." },
-];
-
-const typeBadgeColor: Record<string, string> = {
-  Guide: "bg-primary/10 text-primary",
-  "Video Tutorial": "bg-accent/15 text-accent",
-  Article: "bg-muted text-muted-foreground",
-  Tool: "bg-primary/10 text-primary",
-};
 
 const LearningToolsSection = () => (
   <SectionWrapper id="learn">
@@ -30,7 +16,7 @@ const LearningToolsSection = () => (
       <div className="text-center">
         <h2>Learn how to build your business step by step</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Follow beginner-friendly learning paths and explore curated resources that help you understand every stage of starting and growing a business.
+          Follow beginner-friendly learning paths designed to help you understand every stage of starting and growing a business.
         </p>
       </div>
     </FadeIn>
@@ -44,47 +30,17 @@ const LearningToolsSection = () => (
             </div>
             <h3 className="text-lg">{path.title}</h3>
             <p className="mt-2 flex-1 text-sm text-muted-foreground">{path.description}</p>
-            <a href="#" className="mt-4 inline-block font-subheading text-sm font-semibold text-primary transition-colors hover:text-accent" aria-label={`Start learning ${path.title}`}>
-              Start Learning →
-            </a>
-          </div>
-        </FadeIn>
-      ))}
-    </div>
-
-    <FadeIn className="mt-20 md:mt-24">
-      <div className="text-center">
-        <h2>Curated resources to help you succeed</h2>
-      </div>
-    </FadeIn>
-
-    <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {resources.map((res, i) => (
-        <FadeIn key={res.title} delay={i * 80}>
-          <div className="card-premium group flex h-full flex-col overflow-hidden">
-            {res.videoId ? (
-              <div className="relative aspect-video w-full bg-muted">
-                <iframe
-                  src={`https://www.youtube.com/embed/${res.videoId}`}
-                  title={res.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 h-full w-full"
-                  loading="lazy"
-                />
-              </div>
-            ) : (
-              <div className="flex h-32 items-center justify-center bg-secondary">
-                <res.icon className="h-10 w-10 text-primary/30" strokeWidth={1.5} aria-hidden="true" />
-              </div>
-            )}
-            <div className="flex flex-1 flex-col p-6">
-              <span className={`mb-3 inline-block w-fit rounded-full px-3 py-1 font-subheading text-xs font-semibold ${typeBadgeColor[res.type] || "bg-muted text-muted-foreground"}`}>
-                {res.type}
+            <div className="mt-4 flex items-center gap-2">
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-subheading text-[10px] font-semibold uppercase tracking-wider text-primary">
+                Beginner
               </span>
-              <h3 className="text-base">{res.title}</h3>
-              <p className="mt-2 flex-1 text-sm text-muted-foreground">{res.description}</p>
+              <span className="font-subheading text-xs text-muted-foreground">
+                {path.lessons} lessons
+              </span>
             </div>
+            <Button variant="outline" size="sm" className="mt-4 w-full" asChild>
+              <a href="#" aria-label={`Start learning ${path.title}`}>Start Learning</a>
+            </Button>
           </div>
         </FadeIn>
       ))}
