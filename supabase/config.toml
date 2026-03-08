@@ -2,3 +2,6 @@ project_id = "bhiggiybluqxbjeoqnnh"
 
 [functions.business-tools]
 verify_jwt = false
+
+[functions.ai-mentor]
+verify_jwt = false
