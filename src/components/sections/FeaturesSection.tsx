@@ -11,20 +11,20 @@ const features = [
 const FeaturesSection = () => (
   <SectionWrapper id="features">
     <div className="mb-12 text-center">
-      <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Platform Features</h2>
-      <p className="mt-4 font-body text-muted-foreground">Everything you need to go from idea to launch.</p>
+      <h2>Platform Features</h2>
+      <p className="mt-4 font-subheading text-muted-foreground">Everything you need to go from idea to launch.</p>
     </div>
-    <div className="grid gap-[var(--grid-spacing)] sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {features.map(({ icon: Icon, title, description }) => (
         <div
           key={title}
-          className="rounded-2xl border border-border bg-card p-6 text-center transition-shadow hover:shadow-md"
+          className="group rounded-2xl border border-border bg-card p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
         >
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <Icon size={24} />
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+            <Icon size={26} strokeWidth={1.5} />
           </div>
-          <h3 className="font-display text-lg font-semibold text-card-foreground">{title}</h3>
-          <p className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">{description}</p>
+          <h3 className="text-lg">{title}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
         </div>
       ))}
     </div>
