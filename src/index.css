@@ -41,8 +41,8 @@
 
     /* Gradient tokens */
     --gradient-primary: linear-gradient(135deg, hsl(340, 82%, 76%), hsl(258, 90%, 66%));
-    --shadow-card: 0 4px 24px -4px hsl(258 90% 66% / 0.08);
-    --shadow-card-hover: 0 12px 32px -8px hsl(258 90% 66% / 0.15);
+    --shadow-card: 0 2px 16px -2px hsl(258 90% 66% / 0.06), 0 1px 4px -1px hsl(258 90% 66% / 0.04);
+    --shadow-card-hover: 0 16px 40px -8px hsl(258 90% 66% / 0.14), 0 0 0 1px hsl(258 90% 66% / 0.04);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -87,14 +87,17 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: hsl(var(--foreground));
+    letter-spacing: 0.01em;
   }
 
   h1 {
     @apply text-[34px] leading-tight md:text-[48px];
+    letter-spacing: -0.01em;
   }
 
   h2 {
     @apply text-[28px] leading-snug md:text-[36px];
+    letter-spacing: 0.005em;
   }
 
   h3 {
@@ -103,6 +106,7 @@
 
   p, span, a, li {
     font-family: var(--font-body);
+    line-height: 1.7;
   }
 }
 
@@ -122,6 +126,27 @@
 
   .font-subheading {
     font-family: var(--font-subheading);
+  }
+
+  /* Premium card base */
+  .card-premium {
+    @apply rounded-2xl bg-card border border-border/50;
+    box-shadow: var(--shadow-card);
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .card-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Section alternating backgrounds */
+  .section-lavender {
+    background-color: hsl(264 100% 97%);
+  }
+
+  .section-rose {
+    background-color: hsl(340 100% 97%);
   }
 }
 

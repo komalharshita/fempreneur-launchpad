@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 const CTASection = () => (
   <SectionWrapper id="cta">
     <FadeIn>
-      <div className="overflow-hidden rounded-3xl gradient-primary px-6 py-16 text-center md:px-16 md:py-20">
+      <div className="overflow-hidden rounded-3xl gradient-primary px-6 py-16 text-center md:px-16 md:py-20 shadow-lg">
         <h2 className="text-card">
           Start building your business today.
         </h2>
-        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-card/80 md:text-lg">
+        <p className="mx-auto mt-4 max-w-lg text-base text-card/80 md:text-lg">
           Join The Fempreneur Lab and take the first step toward turning your ideas into a real business.
         </p>
         <Button

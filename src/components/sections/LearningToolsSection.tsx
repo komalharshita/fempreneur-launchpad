@@ -29,7 +29,7 @@ const LearningToolsSection = () => (
     <FadeIn>
       <div className="text-center">
         <h2>Learn how to build your business step by step</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Follow beginner-friendly learning paths and explore curated resources that help you understand every stage of starting and growing a business.
         </p>
       </div>
@@ -38,12 +38,12 @@ const LearningToolsSection = () => (
     <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {learningPaths.map((path, i) => (
         <FadeIn key={path.title} delay={i * 80}>
-          <div className="group flex h-full flex-col rounded-2xl bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-accent transition-colors duration-200 group-hover:bg-accent/25">
+          <div className="card-premium group flex h-full flex-col p-6">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/12 text-accent transition-colors duration-300 group-hover:bg-accent/20">
               <path.icon className="h-6 w-6" strokeWidth={1.5} />
             </div>
             <h3 className="text-lg">{path.title}</h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{path.description}</p>
+            <p className="mt-2 flex-1 text-sm text-muted-foreground">{path.description}</p>
             <a href="#" className="mt-4 inline-block font-subheading text-sm font-semibold text-primary transition-colors hover:text-accent" aria-label={`Start learning ${path.title}`}>
               Start Learning →
             </a>
@@ -61,7 +61,7 @@ const LearningToolsSection = () => (
     <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {resources.map((res, i) => (
         <FadeIn key={res.title} delay={i * 80}>
-          <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+          <div className="card-premium group flex h-full flex-col overflow-hidden">
             {res.videoId ? (
               <div className="relative aspect-video w-full bg-muted">
                 <iframe
@@ -75,7 +75,7 @@ const LearningToolsSection = () => (
               </div>
             ) : (
               <div className="flex h-32 items-center justify-center bg-secondary">
-                <res.icon className="h-10 w-10 text-primary/40" strokeWidth={1.5} aria-hidden="true" />
+                <res.icon className="h-10 w-10 text-primary/30" strokeWidth={1.5} aria-hidden="true" />
               </div>
             )}
             <div className="flex flex-1 flex-col p-6">
@@ -83,7 +83,7 @@ const LearningToolsSection = () => (
                 {res.type}
               </span>
               <h3 className="text-base">{res.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{res.description}</p>
+              <p className="mt-2 flex-1 text-sm text-muted-foreground">{res.description}</p>
             </div>
           </div>
         </FadeIn>

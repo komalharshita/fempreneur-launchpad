@@ -21,23 +21,23 @@ interface ShowcaseEntry {
 }
 
 const ShowcaseCard = ({ entry }: { entry: ShowcaseEntry }) => (
-  <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+  <div className="card-premium group flex h-full flex-col overflow-hidden">
     <div className="flex h-44 items-center justify-center bg-secondary">
       {entry.image_url ? (
         <img src={entry.image_url} alt={`${entry.business_name} by ${entry.founder_name}`} className="h-full w-full object-cover" />
       ) : (
-        <span className="font-display text-3xl font-bold text-primary/20" aria-hidden="true">
+        <span className="font-display text-3xl font-bold text-primary/15" aria-hidden="true">
           {entry.business_name.charAt(0)}
         </span>
       )}
     </div>
     <div className="flex flex-1 flex-col p-6">
-      <span className="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-accent/15 px-3 py-1 font-subheading text-[10px] font-semibold uppercase tracking-wider text-accent">
+      <span className="mb-2 inline-flex w-fit items-center gap-1 rounded-full bg-accent/12 px-3 py-1 font-subheading text-[10px] font-semibold uppercase tracking-wider text-accent">
         <BadgeCheck className="h-3 w-3" aria-hidden="true" /> Women-Owned Business
       </span>
       <h3 className="text-lg">{entry.business_name}</h3>
       <p className="mt-0.5 font-subheading text-xs font-medium text-muted-foreground">by {entry.founder_name}</p>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{entry.description}</p>
+      <p className="mt-2 flex-1 text-sm text-muted-foreground">{entry.description}</p>
       {entry.website_url && (
         <a href={entry.website_url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 font-subheading text-sm font-medium text-primary transition-colors hover:text-accent" aria-label={`Visit ${entry.business_name} store`}>
           Visit Store <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -47,7 +47,7 @@ const ShowcaseCard = ({ entry }: { entry: ShowcaseEntry }) => (
   </div>
 );
 
-const inputClass = "w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary";
+const inputClass = "w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 hover:border-primary/30";
 
 const ShowcaseSection = () => {
   const [dbEntries, setDbEntries] = useState<ShowcaseEntry[]>([]);
@@ -97,11 +97,11 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <SectionWrapper id="showcase" className="bg-secondary">
+    <SectionWrapper id="showcase" className="section-rose">
       <FadeIn>
         <div className="text-center">
           <h2>Women building incredible businesses</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Discover inspiring women entrepreneurs who turned their ideas into real businesses — and share your own story with the community.
           </p>
         </div>
@@ -118,7 +118,7 @@ const ShowcaseSection = () => {
       <FadeIn className="mx-auto mt-20 max-w-xl">
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl">Share your business with the community</h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-3 text-sm text-muted-foreground">
             If you've started your own business, we would love to feature your story and inspire other women.
           </p>
         </div>
@@ -136,7 +136,7 @@ const ShowcaseSection = () => {
           <label className="sr-only" htmlFor="business-url">Website or social link</label>
           <input id="business-url" type="url" placeholder="Website or social link (optional)" value={form.website_url} onChange={(e) => setForm((p) => ({ ...p, website_url: e.target.value }))} maxLength={255} className={inputClass} />
 
-          <label htmlFor="business-image" className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-border bg-card px-4 py-3 text-sm text-muted-foreground transition-all duration-200 hover:border-primary/40 hover:bg-card/80">
+          <label htmlFor="business-image" className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-border bg-card px-4 py-3 text-sm text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:bg-card/80">
             <Upload className="h-4 w-4 text-primary" aria-hidden="true" />
             {imageFile ? imageFile.name : "Upload business image (optional)"}
             <input id="business-image" type="file" accept="image/*" className="hidden" onChange={(e) => setImageFile(e.target.files?.[0] || null)} />
