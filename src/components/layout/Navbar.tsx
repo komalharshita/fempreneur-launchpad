@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = ["Features", "Learn", "Showcase", "Community"];
 
@@ -13,26 +14,21 @@ const Navbar = () => {
           The Fempreneur Lab
         </a>
 
-        {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="font-subheading text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {link}
             </a>
           ))}
-          <a
-            href="#cta"
-            className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Get Started
-          </a>
+          <Button variant="gradient" size="sm" asChild>
+            <a href="#cta">Get Started</a>
+          </Button>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="text-foreground md:hidden"
@@ -42,7 +38,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <nav className="border-t border-border bg-background px-5 pb-6 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
@@ -51,18 +46,14 @@ const Navbar = () => {
                 key={link}
                 href={`#${link.toLowerCase()}`}
                 onClick={() => setMobileOpen(false)}
-                className="font-body text-base font-medium text-muted-foreground"
+                className="font-subheading text-base font-medium text-muted-foreground"
               >
                 {link}
               </a>
             ))}
-            <a
-              href="#cta"
-              onClick={() => setMobileOpen(false)}
-              className="mt-2 rounded-full bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground"
-            >
-              Get Started
-            </a>
+            <Button variant="gradient" className="mt-2" asChild>
+              <a href="#cta" onClick={() => setMobileOpen(false)}>Get Started</a>
+            </Button>
           </div>
         </nav>
       )}
