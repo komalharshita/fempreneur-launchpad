@@ -9,12 +9,12 @@ import { BookOpen, Video, Wrench, FileText } from "lucide-react";
 type Category = "All" | "Marketing" | "Design" | "Selling" | "Finance";
 
 const resources = [
-{ icon: BookOpen, title: "How to Price Handmade Products", type: "Guide", category: "Finance" as Category, description: "Learn simple strategies to price your products without undervaluing your work." },
-{ icon: Video, title: "Using Canva to Design Product Posters", type: "Video Tutorial", category: "Design" as Category, description: "Step-by-step tutorial showing how to create beautiful product visuals." },
-{ icon: BookOpen, title: "How to Set Up an Etsy Store", type: "Guide", category: "Selling" as Category, description: "A beginner-friendly guide to launching your Etsy shop." },
-{ icon: Wrench, title: "Where to Find Free Design Mockups", type: "Article", category: "Design" as Category, description: "Discover websites where you can download free product mockups." },
-{ icon: FileText, title: "Beginner Marketing for Small Businesses", type: "Article", category: "Marketing" as Category, description: "Simple marketing strategies to help you get your first customers." },
-{ icon: FileText, title: "Simple Bookkeeping for Beginners", type: "Guide", category: "Finance" as Category, description: "Track income and expenses with easy-to-follow bookkeeping basics." }];
+{ icon: BookOpen, title: "How to Price Handmade Products", type: "Guide", category: "Finance" as Category, description: "Learn simple strategies to price your products without undervaluing your work.", thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" },
+{ icon: Video, title: "Using Canva to Design Product Posters", type: "Video Tutorial", category: "Design" as Category, description: "Step-by-step tutorial showing how to create beautiful product visuals.", thumbnail: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" },
+{ icon: BookOpen, title: "How to Set Up an Etsy Store", type: "Guide", category: "Selling" as Category, description: "A beginner-friendly guide to launching your Etsy shop.", thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" },
+{ icon: Wrench, title: "Where to Find Free Design Mockups", type: "Article", category: "Design" as Category, description: "Discover websites where you can download free product mockups.", thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop" },
+{ icon: FileText, title: "Beginner Marketing for Small Businesses", type: "Article", category: "Marketing" as Category, description: "Simple marketing strategies to help you get your first customers.", thumbnail: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&h=400&fit=crop" },
+{ icon: FileText, title: "Simple Bookkeeping for Beginners", type: "Guide", category: "Finance" as Category, description: "Track income and expenses with easy-to-follow bookkeeping basics.", thumbnail: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&h=400&fit=crop" }];
 
 
 const categories: Category[] = ["All", "Marketing", "Design", "Selling", "Finance"];
@@ -65,8 +65,8 @@ const ResourcesPage = () => {
             {filtered.map((res, i) =>
             <FadeIn key={res.title} delay={i * 80}>
                 <div className="card-premium group flex h-full flex-col overflow-hidden">
-                  <div className="flex h-32 items-center justify-center bg-secondary">
-                    <res.icon className="h-10 w-10 text-primary/30" strokeWidth={1.5} aria-hidden="true" />
+                  <div className="h-40 overflow-hidden bg-secondary">
+                    <img src={res.thumbnail} alt={res.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <span className={`mb-3 inline-block w-fit rounded-full px-3 py-1 font-subheading text-xs font-semibold ${typeBadgeColor[res.type] || "bg-muted text-muted-foreground"}`}>
