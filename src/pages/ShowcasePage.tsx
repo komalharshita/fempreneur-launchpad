@@ -10,9 +10,9 @@ import { toast } from "@/hooks/use-toast";
 import { ExternalLink, Upload, Loader2, BadgeCheck } from "lucide-react";
 
 const staticShowcases = [
-  { business_name: "Ananya's Crochet Studio", founder_name: "Ananya Sharma", description: "Handmade crochet bags and accessories crafted with love.", image_url: null, website_url: "#" },
-  { business_name: "Sweet Bloom Bakery", founder_name: "Riya Patel", description: "Home-based bakery specializing in custom cakes and desserts.", image_url: null, website_url: "#" },
-  { business_name: "Minimal Canvas Designs", founder_name: "Sara Khan", description: "Modern digital templates for creatives and small businesses.", image_url: null, website_url: "#" },
+  { business_name: "Ananya's Crochet Studio", founder_name: "Ananya Sharma", description: "Handmade crochet bags and accessories crafted with love.", image_url: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=600&h=400&fit=crop", website_url: "#" },
+  { business_name: "Sweet Bloom Bakery", founder_name: "Riya Patel", description: "Home-based bakery specializing in custom cakes and desserts.", image_url: "https://images.unsplash.com/photo-1486427944781-dbf24daa5727?w=600&h=400&fit=crop", website_url: "#" },
+  { business_name: "Minimal Canvas Designs", founder_name: "Sara Khan", description: "Modern digital templates for creatives and small businesses.", image_url: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=600&h=400&fit=crop", website_url: "#" },
 ];
 
 interface ShowcaseEntry {

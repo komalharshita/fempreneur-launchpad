@@ -65,8 +65,8 @@ const ResourcesPage = () => {
             {filtered.map((res, i) =>
             <FadeIn key={res.title} delay={i * 80}>
                 <div className="card-premium group flex h-full flex-col overflow-hidden">
-                  <div className="flex h-32 items-center justify-center bg-secondary">
-                    <res.icon className="h-10 w-10 text-primary/30" strokeWidth={1.5} aria-hidden="true" />
+                  <div className="h-40 overflow-hidden bg-secondary">
+                    <img src={res.thumbnail} alt={res.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <span className={`mb-3 inline-block w-fit rounded-full px-3 py-1 font-subheading text-xs font-semibold ${typeBadgeColor[res.type] || "bg-muted text-muted-foreground"}`}>
