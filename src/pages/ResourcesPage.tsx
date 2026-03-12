@@ -9,12 +9,12 @@ import { BookOpen, Video, Wrench, FileText } from "lucide-react";
 type Category = "All" | "Marketing" | "Design" | "Selling" | "Finance";
 
 const resources = [
-{ icon: BookOpen, title: "How to Price Handmade Products", type: "Guide", category: "Finance" as Category, description: "Learn simple strategies to price your products without undervaluing your work.", thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" },
-{ icon: Video, title: "Using Canva to Design Product Posters", type: "Video Tutorial", category: "Design" as Category, description: "Step-by-step tutorial showing how to create beautiful product visuals.", thumbnail: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" },
-{ icon: BookOpen, title: "How to Set Up an Etsy Store", type: "Guide", category: "Selling" as Category, description: "A beginner-friendly guide to launching your Etsy shop.", thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" },
-{ icon: Wrench, title: "Where to Find Free Design Mockups", type: "Article", category: "Design" as Category, description: "Discover websites where you can download free product mockups.", thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop" },
-{ icon: FileText, title: "Beginner Marketing for Small Businesses", type: "Article", category: "Marketing" as Category, description: "Simple marketing strategies to help you get your first customers.", thumbnail: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&h=400&fit=crop" },
-{ icon: FileText, title: "Simple Bookkeeping for Beginners", type: "Guide", category: "Finance" as Category, description: "Track income and expenses with easy-to-follow bookkeeping basics.", thumbnail: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&h=400&fit=crop" }];
+{ icon: BookOpen, title: "How to Price Handmade Products", type: "Guide", category: "Finance" as Category, description: "Learn simple strategies to price your products without undervaluing your work.", thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop" },
+{ icon: Video, title: "Using Canva to Design Product Posters", type: "Video Tutorial", category: "Design" as Category, description: "Step-by-step tutorial showing how to create beautiful product visuals.", thumbnail: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop" },
+{ icon: BookOpen, title: "How to Set Up an Etsy Store", type: "Guide", category: "Selling" as Category, description: "A beginner-friendly guide to launching your Etsy shop.", thumbnail: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop" },
+{ icon: Wrench, title: "Where to Find Free Design Mockups", type: "Article", category: "Design" as Category, description: "Discover websites where you can download free product mockups.", thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop" },
+{ icon: FileText, title: "Beginner Marketing for Small Businesses", type: "Article", category: "Marketing" as Category, description: "Simple marketing strategies to help you get your first customers.", thumbnail: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=500&fit=crop" },
+{ icon: FileText, title: "Simple Bookkeeping for Beginners", type: "Guide", category: "Finance" as Category, description: "Track income and expenses with easy-to-follow bookkeeping basics.", thumbnail: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=800&h=500&fit=crop" }];
 
 
 const categories: Category[] = ["All", "Marketing", "Design", "Selling", "Finance"];

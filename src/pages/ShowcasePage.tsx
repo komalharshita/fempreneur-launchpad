@@ -10,9 +10,9 @@ import { toast } from "@/hooks/use-toast";
 import { ExternalLink, Upload, Loader2, BadgeCheck } from "lucide-react";
 
 const staticShowcases = [
-  { business_name: "Ananya's Crochet Studio", founder_name: "Ananya Sharma", description: "Handmade crochet bags and accessories crafted with love.", image_url: "https://images.unsplash.com/photo-1615486511262-c7b5e1e8a10a?w=600&h=400&fit=crop", website_url: "#" },
-  { business_name: "Sweet Bloom Bakery", founder_name: "Riya Patel", description: "Home-based bakery specializing in custom cakes and desserts.", image_url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop", website_url: "#" },
-  { business_name: "Minimal Canvas Designs", founder_name: "Sara Khan", description: "Modern digital templates for creatives and small businesses.", image_url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop", website_url: "#" },
+  { business_name: "Ananya's Crochet Studio", founder_name: "Ananya Sharma", description: "Handmade crochet bags and accessories crafted with love.", image_url: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=800&h=500&fit=crop", website_url: "#" },
+  { business_name: "Sweet Bloom Bakery", founder_name: "Riya Patel", description: "Home-based bakery specializing in custom cakes and desserts.", image_url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=500&fit=crop", website_url: "#" },
+  { business_name: "Minimal Canvas Designs", founder_name: "Sara Khan", description: "Modern digital templates for creatives and small businesses.", image_url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop", website_url: "#" },
 ];
 
 interface ShowcaseEntry {
