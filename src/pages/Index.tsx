@@ -11,15 +11,15 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Sparkles, GraduationCap, Users, BookOpen, ArrowRight } from "lucide-react";
 
 const highlights = [
-  { icon: MessageCircle, title: "AI Mentor", description: "Get personalized guidance from your AI business coach.", href: "/mentor" },
-  { icon: Sparkles, title: "Business Tools", description: "Generate names, plans, pricing, and captions with AI.", href: "/tools" },
-  { icon: GraduationCap, title: "Learning Paths", description: "Follow step-by-step paths to build your business.", href: "/learning" },
-  { icon: BookOpen, title: "Resources", description: "Browse curated guides, tutorials, and articles.", href: "/resources" },
-  { icon: Users, title: "Showcase", description: "Discover inspiring women-owned businesses.", href: "/showcase" },
-];
+{ icon: MessageCircle, title: "AI Mentor", description: "Get personalized guidance from your AI business coach.", href: "/mentor" },
+{ icon: Sparkles, title: "Business Tools", description: "Generate names, plans, pricing, and captions with AI.", href: "/tools" },
+{ icon: GraduationCap, title: "Learning Paths", description: "Follow step-by-step paths to build your business.", href: "/learning" },
+{ icon: BookOpen, title: "Resources", description: "Browse curated guides, tutorials, and articles.", href: "/resources" },
+{ icon: Users, title: "Showcase", description: "Discover inspiring women-owned businesses.", href: "/showcase" }];
 
-const Index = () => (
-  <div className="min-h-screen bg-background">
+
+const Index = () =>
+<div className="min-h-screen bg-background">
     <Navbar />
     <main>
       <HeroSection />
@@ -37,8 +37,8 @@ const Index = () => (
           </div>
         </FadeIn>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((item, i) => (
-            <FadeIn key={item.title} delay={i * 80}>
+          {highlights.map((item, i) =>
+        <FadeIn key={item.title} delay={i * 80}>
               <Link to={item.href} className="card-premium group flex h-full flex-col p-6 transition-all">
                 <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
                   <item.icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
@@ -50,14 +50,14 @@ const Index = () => (
                 </span>
               </Link>
             </FadeIn>
-          ))}
+        )}
         </div>
       </SectionWrapper>
 
       {/* Mid CTA */}
       <SectionWrapper>
         <FadeIn>
-          <div className="text-center">
+          <div className="text-center mx-[20px] my-[30px]">
             <h2>Ready to start your business journey?</h2>
             <p className="mx-auto mt-4 max-w-lg text-lg text-muted-foreground">
               Thousands of women are already using The Fempreneur Lab to turn their passions into thriving businesses.
@@ -73,7 +73,7 @@ const Index = () => (
     </main>
     <Footer />
     <ScrollToTop />
-  </div>
-);
+  </div>;
+
 
 export default Index;
