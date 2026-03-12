@@ -29,14 +29,14 @@ const Index = () =>
       {/* Platform highlights linking to pages */}
       <SectionWrapper className="section-rose">
         <FadeIn>
-          <div className="text-center">
+          <div className="text-center py-[40px]">
             <h2>Explore the platform</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Everything you need to go from idea to launch — all in one place.
             </p>
           </div>
         </FadeIn>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-[30px] py-[40px]">
           {highlights.map((item, i) =>
         <FadeIn key={item.title} delay={i * 80}>
               <Link to={item.href} className="card-premium group flex h-full flex-col p-6 transition-all">
