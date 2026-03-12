@@ -7,8 +7,8 @@ import FadeIn from "@/components/ui/FadeIn";
 import { Button } from "@/components/ui/button";
 import { allTools } from "@/data/tools";
 
-const ToolsHub = () => (
-  <div className="min-h-screen bg-background">
+const ToolsHub = () =>
+<div className="min-h-screen bg-background">
     <Navbar />
     <main>
       <SectionWrapper>
@@ -21,9 +21,9 @@ const ToolsHub = () => (
           </div>
         </FadeIn>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2">
-          {allTools.map((tool, i) => (
-            <FadeIn key={tool.slug} delay={i * 100}>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 py-[30px]">
+          {allTools.map((tool, i) =>
+        <FadeIn key={tool.slug} delay={i * 100}>
               <div className="card-premium group flex h-full flex-col p-6">
                 <div className="mb-3 flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
@@ -37,13 +37,13 @@ const ToolsHub = () => (
                 </Button>
               </div>
             </FadeIn>
-          ))}
+        )}
         </div>
       </SectionWrapper>
     </main>
     <Footer />
     <ScrollToTop />
-  </div>
-);
+  </div>;
+
 
 export default ToolsHub;
