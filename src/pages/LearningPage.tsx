@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Scissors, FileImage, Instagram, Home } from "lucide-react";
 
 const learningPaths = [
-  { icon: Scissors, title: "Handmade Product Business", description: "Learn how to create, price, package, and sell handmade products.", lessons: 8 },
-  { icon: FileImage, title: "Digital Product Business", description: "Understand how to create and sell digital products such as templates, guides, or artwork.", lessons: 6 },
-  { icon: Instagram, title: "Instagram Store Setup", description: "Step-by-step guidance to start selling your products using Instagram.", lessons: 5 },
-  { icon: Home, title: "Local Small Business", description: "Learn how to start a home-based or local service business.", lessons: 7 },
-];
+{ icon: Scissors, title: "Handmade Product Business", description: "Learn how to create, price, package, and sell handmade products.", lessons: 8 },
+{ icon: FileImage, title: "Digital Product Business", description: "Understand how to create and sell digital products such as templates, guides, or artwork.", lessons: 6 },
+{ icon: Instagram, title: "Instagram Store Setup", description: "Step-by-step guidance to start selling your products using Instagram.", lessons: 5 },
+{ icon: Home, title: "Local Small Business", description: "Learn how to start a home-based or local service business.", lessons: 7 }];
 
-const LearningPage = () => (
-  <div className="min-h-screen bg-background">
+
+const LearningPage = () =>
+<div className="min-h-screen bg-background">
     <Navbar />
     <main>
       <SectionWrapper>
@@ -27,9 +27,9 @@ const LearningPage = () => (
           </div>
         </FadeIn>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2">
-          {learningPaths.map((path, i) => (
-            <FadeIn key={path.title} delay={i * 80}>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 py-[40px]">
+          {learningPaths.map((path, i) =>
+        <FadeIn key={path.title} delay={i * 80}>
               <div className="card-premium group flex h-full flex-col p-6 md:p-8">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/12 text-accent transition-colors duration-300 group-hover:bg-accent/20">
                   <path.icon className="h-7 w-7" strokeWidth={1.5} />
@@ -49,13 +49,13 @@ const LearningPage = () => (
                 </Button>
               </div>
             </FadeIn>
-          ))}
+        )}
         </div>
       </SectionWrapper>
     </main>
     <Footer />
     <ScrollToTop />
-  </div>
-);
+  </div>;
+
 
 export default LearningPage;
