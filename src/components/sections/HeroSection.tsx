@@ -2,15 +2,15 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
-const HeroSection = () => (
-  <section
-    id="hero"
-    className="relative overflow-hidden"
-    style={{
-      background:
-        "linear-gradient(160deg, hsl(264 100% 97%) 0%, hsl(340 100% 97%) 40%, hsl(264 100% 97%) 70%, hsl(340 100% 98%) 100%)",
-    }}
-  >
+const HeroSection = () =>
+<section
+  id="hero"
+  className="relative overflow-hidden"
+  style={{
+    background:
+    "linear-gradient(160deg, hsl(264 100% 97%) 0%, hsl(340 100% 97%) 40%, hsl(264 100% 97%) 70%, hsl(340 100% 98%) 100%)"
+  }}>
+  
     {/* Ambient glow shapes */}
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-accent/8 blur-[120px]" />
@@ -30,7 +30,7 @@ const HeroSection = () => (
         <FadeIn delay={100}>
           <h1 className="max-w-xl">
             A place where women{" "}
-            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent font-display">
               learn, build,
             </span>{" "}
             and launch businesses.
@@ -61,13 +61,13 @@ const HeroSection = () => (
         <div className="relative flex items-center justify-center lg:justify-end">
           <div className="absolute h-[340px] w-[340px] rounded-full border-2 border-dashed border-accent/15 md:h-[420px] md:w-[420px]" />
           <svg
-            viewBox="0 0 400 400"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="relative h-[300px] w-[300px] md:h-[380px] md:w-[380px]"
-            role="img"
-            aria-label="Illustration of a woman entrepreneur working at a desk with growth charts and creative ideas"
-          >
+          viewBox="0 0 400 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="relative h-[300px] w-[300px] md:h-[380px] md:w-[380px]"
+          role="img"
+          aria-label="Illustration of a woman entrepreneur working at a desk with growth charts and creative ideas">
+          
             <circle cx="200" cy="200" r="180" fill="hsl(264 100% 97%)" />
             <circle cx="200" cy="200" r="160" fill="hsl(340 100% 97%)" />
             <rect x="110" y="210" width="180" height="110" rx="12" fill="hsl(258 90% 66%)" opacity="0.12" />
@@ -101,7 +101,7 @@ const HeroSection = () => (
         <ChevronDown className="h-6 w-6 text-primary/40" />
       </a>
     </div>
-  </section>
-);
+  </section>;
+
 
 export default HeroSection;
